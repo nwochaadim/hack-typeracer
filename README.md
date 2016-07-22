@@ -1,5 +1,5 @@
 # hack-typeracer
-A fun project to automate typing in typeracer.com race competitions
+A fun project to automate typing in [typeracer.com](http://typeracer.com) race competitions
 
 ## Usage
 1. Just Paste in the contents of hack-loader.js into the console, if you see the following:
