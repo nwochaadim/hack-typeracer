@@ -1,21 +1,34 @@
-function hack(){
-  while(getTextToWrite() !== ""){
-    $('.txtInput').autotype(getTextToWrite()+" ");
-    wait();
-  }
-  console.log("Done!");
+loadJquery();
+var promise;
+function hack(timeDelay){
+    promise = setInterval(function(){
+    $('.txtInput').autotype(getTextToWrite()+getPuntuaction()+" ");
+    if(getTextToWrite()===""){
+      clearInterval(promise);
+      clearAnnoyingPrompt();
+    }
+  }, timeDelay)
+
 }
 
 function wait(){
   setTimeout(doNothing, 10)
 }
-
+ 
 function doNothing(){
   console.log("Loading...")
 }
 
+function clearAnnoyingPrompt(){
+  $('.PopupWithIcon.challengePromptDialog').remove();
+}
+
 function getTextToWrite(){
   return $('.nonHideableWords.unselectable span:nth-child(2)').text();
+}
+
+function getPuntuaction(){
+  return $('.nonHideableWords.unselectable span:nth-child(3)').text();
 }
 
 function getWrittenText(){
@@ -33,9 +46,8 @@ function loadJquery(){
 }
 
 function loadAutotype(){
-  url = "https://raw.githubusercontent.com/mmonteleone/jquery.autotype/master/jquery.autotype.js"
+  url = "https://cdn.rawgit.com/mmonteleone/jquery.autotype/master/jquery.autotype.js"
   loadScript(url, doNothing);
-
 }
 
 function loadScript(url, callback)
@@ -45,5 +57,6 @@ function loadScript(url, callback)
     script.src = url;
     script.type = "text/javascript"
     script.onreadystatechange = callback;
+    script.onload = callback
     head.appendChild(script);
 }
