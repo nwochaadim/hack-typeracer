@@ -46,7 +46,7 @@ function loadJquery(){
 }
 
 function loadAutotype(){
-  url = "https://cdn.rawgit.com/mmonteleone/jquery.autotype/master/jquery.autotype.js"
+  url = "https://cdn.jsdelivr.net/gh/mmonteleone/jquery.autotype@master/jquery.autotype.js"
   loadScript(url, doNothing);
 }
 
