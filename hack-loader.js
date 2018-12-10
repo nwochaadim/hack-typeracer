@@ -1,4 +1,4 @@
-loadScript("https://cdn.rawgit.com/andela-anwocha/hack-typeracer/master/hack-typeracer.js", function(){
+loadScript("https://cdn.jsdelivr.net/gh/andela-anwocha/hack-typeracer@master/hack-typeracer.js", function(){
   console.log("Initialized succcesfully");
 })
 
